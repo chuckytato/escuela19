@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escuela EES19</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Para que el scroll en el menú lateral no tape el footer o cosas */
+    #menuDrawer {
+      max-height: 100vh;
+    }
+  </style>
+</head>
+
+<body class="bg-amber-50">
+
+  <!-- Encabezado -->
+  <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3">
+    <div class="flex justify-between items-center">
+      <h1 class="text-lg font-bold cursor-pointer">Escuela Secundaria 19</h1>
+      <div class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú hamburguesa -->
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+
+    <!-- Ciclo Básico -->
+    <div>
+      <button class="w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded flex justify-between items-center" onclick="toggleSubmenu('basicoSubmenu')">
+        Ciclo Básico
+        <span id="iconBasico" class="transition-transform duration-300">&#x25BC;</span>
+      </button>
+      <div id="basicoSubmenu" class="hidden mt-2 pl-4 space-y-2 text-amber-900">
+        <div>
+          <button class="w-full text-left hover:underline" onclick="selectCiclo('basico')">Ver cursos y trabajos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ciclo Superior -->
+    <div>
+      <button class="w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded flex justify-between items-center" onclick="toggleSubmenu('superiorSubmenu')">
+        Ciclo Superior
+        <span id="iconSuperior" class="transition-transform duration-300">&#x25BC;</span>
+      </button>
+      <div id="superiorSubmenu" class="hidden mt-2 pl-4 space-y-2 text-amber-900">
+        <div>
+          <button class="w-full text-left hover:underline" onclick="selectCiclo('superior')">Ver cursos y trabajos</button>
+        </div>
+      </div>
+    </div>
+
+    <button class="w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded" onclick="irA('biblioteca')">Biblioteca</button>
+    <button class="w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded" onclick="irA('contacto')">Contacto</button>
+    <button class="w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded" onclick="irA('cooperadora')">Cooperadora</button>
+  </aside>
+
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>
+
+  <!-- Contenido principal -->
+  <main class="pt-24 px-4 space-y-12 max-w-3xl mx-auto">
+    <section id="quienes">
+      <h2 class="text-2xl font-bold text-amber-900 mb-2">Quiénes Somos</h2>
+      <p class="text-gray-700">
+        Somos una institución educativa comprometida con la formación integral de nuestros estudiantes, promoviendo valores, pensamiento crítico y creatividad.
+      </p>
+      <a href="#" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
+    </section>
+
+    <section id="novedades">
+      <h2 class="text-2xl font-bold text-amber-900 mb-2">Novedades</h2>
+      <p class="text-gray-700">
+        ¡Nueva sala de informática equipada! Además, este mes iniciamos talleres extracurriculares de robótica y arte digital.
+      </p>
+      <a href="#" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
+    </section>
+
+    <section id="historia">
+      <h2 class="text-2xl font-bold text-amber-900 mb-2">Nuestra Historia</h2>
+      <p class="text-gray-700">
+        Fundada en 1985, la Escuela Secundaria 19 ha acompañado el crecimiento educativo de generaciones, apostando siempre a la innovación pedagógica y al vínculo con la comunidad.
+      </p>
+      <a href="#" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
+    </section>
+  </main>
+
+  <!-- MODALES -->
+
+  <!-- Modal Cursos -->
+  <div id="modalCursosGrados" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-60">
+    <div class="bg-white rounded shadow-lg max-w-md w-full p-6 relative">
+      <h3 class="text-xl font-bold mb-4" id="modalCursosCiclo">Cursos</h3>
+      <div id="cursosContainer" class="space-y-2 max-h-64 overflow-auto"></div>
+      <button onclick="closeModal('modalCursosGrados')" class="absolute top-2 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold">×</button>
+    </div>
+  </div>
+
+  <!-- Modal Materias -->
+  <div id="modalMaterias" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-60">
+    <div class="bg-white rounded shadow-lg max-w-md w-full p-6 relative">
+      <h3 class="text-xl font-bold mb-4">Materias - <span id="modalMateriasCiclo"></span> <span id="modalMateriasCurso" class="italic"></span></h3>
+      <div id="materiasContainer" class="space-y-2 max-h-64 overflow-auto"></div>
+      <button onclick="closeModal('modalMaterias')" class="absolute top-2 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold">×</button>
+    </div>
+  </div>
+
+  <!-- Modal Trabajos -->
+  <div id="modalTrabajos" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-60">
+    <div class="bg-white rounded shadow-lg max-w-md w-full p-6 relative">
+      <h3 class="text-xl font-bold mb-4">Trabajos de <span id="modalTrabajosMateria"></span></h3>
+      <ul id="trabajosList" class="list-disc pl-5 max-h-64 overflow-auto text-blue-600"></ul>
+      <button onclick="closeModal('modalTrabajos')" class="absolute top-2 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold">×</button>
+    </div>
+  </div>
+
+<script>
+  // Toggle menú hamburguesa
+  function toggleMenu() {
+    const menu = document.getElementById('menuDrawer');
+    const overlay = document.getElementById('overlay');
+    if (menu.classList.contains('translate-x-full')) {
+      menu.classList.remove('translate-x-full');
+      overlay.classList.remove('hidden');
+    } else {
+      menu.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+    }
+  }
+
+  // Toggle submenús del menú lateral
+  function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    const icon = document.getElementById('icon' + id.charAt(0).toUpperCase() + id.slice(1).replace('Submenu',''));
+    if (submenu.classList.contains('hidden')) {
+      submenu.classList.remove('hidden');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+    } else {
+      submenu.classList.add('hidden');
+      if (icon) icon.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  // Navegación simulada con alert (puedes modificar para scroll o cambio real)
+  function irA(seccion) {
+    alert('Ir a sección: ' + seccion);
+  }
+
+  // Manejo de modales
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.remove('hidden');
+  }
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) modal.classList.add('hidden');
+}
+
+// Datos de ejemplo para los ciclos
+const datos = {
+basico: {
+cursos: ['1ro', '2do', '3ro'],
+materias: {
+'1ro': ['Matemáticas', 'Lengua', 'Historia'],
+'2do': ['Matemáticas', 'Biología', 'Geografía'],
+'3ro': ['Física', 'Química', 'Literatura']
+},
+trabajos: {
+'Matemáticas': ['Ejercicio 1', 'Ejercicio 2', 'Proyecto Álgebra'],
+'Lengua': ['Análisis de texto', 'Redacción ensayo'],
+'Historia': ['Informe sobre la independencia'],
+'Biología': ['Práctica de laboratorio'],
+'Geografía': ['Mapa de América'],
+'Física': ['Experimento de caída libre'],
+'Química': ['Informe de reacción química'],
+'Literatura': ['Reseña de libro']
+}
+},
+superior: {
+cursos: ['4to', '5to', '6to'],
+materias: {
+'4to': ['Matemáticas Avanzadas', 'Filosofía', 'Sociología'],
+'5to': ['Física', 'Química', 'Biología'],
+'6to': ['Literatura', 'Historia del Arte', 'Economía']
+},
+trabajos: {
+'Matemáticas Avanzadas': ['Tarea integradora'],
+'Filosofía': ['Ensayo sobre ética'],
+'Sociología': ['Estudio de caso'],
+'Física': ['Informe sobre ondas'],
+'Química': ['Proyecto químico'],
+'Biología': ['Práctica de campo'],
+'Literatura': ['Análisis literario'],
+'Historia del Arte': ['Presentación de movimientos artísticos'],
+'Economía': ['Trabajo de investigación']
+}
+}
+};
+
+// Cuando se selecciona "Ver cursos y trabajos" de un ciclo
+function selectCiclo(ciclo) {
+closeMenuAndReset();
+const modal = document.getElementById('modalCursosGrados');
+const titulo = document.getElementById('modalCursosCiclo');
+const container = document.getElementById('cursosContainer');
+titulo.textContent = ciclo === 'basico' ? 'Ciclo Básico - Cursos' : 'Ciclo Superior - Cursos';
+container.innerHTML = '';
+datos[ciclo].cursos.forEach(curso => {
+const btn = document.createElement('button');
+btn.textContent = curso;
+btn.className = "block w-full text-left py-2 px-3 bg-amber-100 hover:bg-amber-200 rounded";
+btn.onclick = () => selectCurso(ciclo, curso);
+container.appendChild(btn);
+});
+openModal('modalCursosGrados');
+}
+
+// Cuando se selecciona un curso se muestran materias
+function selectCurso(ciclo, curso) {
+closeModal('modalCursosGrados');
+const modal = document.getElementById('modalMaterias');
+const tituloCiclo = document.getElementById('modalMateriasCiclo');
+const tituloCurso = document.getElementById('modalMateriasCurso');
+const container = document.getElementById('materiasContainer');
+tituloCiclo.textContent = ciclo === 'basico' ? 'Ciclo Básico' : 'Ciclo Superior';
+tituloCurso.textContent = curso;
+container.innerHTML = '';
+const materias = datos[ciclo].materias[curso] || [];
+materias.forEach(materia => {
+const btn = document.createElement('button');
+btn.textContent = materia;
+btn.className = "block w-full text-left py-2 px-3 bg-amber-100 hover:bg-amber-200 rounded";
+btn.onclick = () => selectMateria(ciclo, materia);
+container.appendChild(btn);
+});
+openModal('modalMaterias');
+}
+
+// Cuando se selecciona una materia, se muestran trabajos
+function selectMateria(ciclo, materia) {
+closeModal('modalMaterias');
+const modal = document.getElementById('modalTrabajos');
+const tituloMateria = document.getElementById('modalTrabajosMateria');
+const lista = document.getElementById('trabajosList');
+tituloMateria.textContent = materia;
+lista.innerHTML = '';
+const trabajos = datos[ciclo].trabajos[materia] || ['No hay trabajos disponibles'];
+trabajos.forEach(trabajo => {
+const li = document.createElement('li');
+li.textContent = trabajo;
+lista.appendChild(li);
+});
+openModal('modalTrabajos');
+}
+
+// Al cerrar menú hamburguesa también cerramos submenús para reset
+function closeMenuAndReset() {
+toggleMenu();
+// Cerrar submenús si están abiertos
+['basicoSubmenu','superiorSubmenu'].forEach(id => {
+const submenu = document.getElementById(id);
+if (!submenu.classList.contains('hidden')) {
+submenu.classList.add('hidden');
+}
+// Reset iconos
+const icon = document.getElementById('icon' + id.charAt(0).toUpperCase() + id.slice(1).replace('Submenu',''));
+if (icon) icon.style.transform = 'rotate(0deg)';
+});
+}
+
+</script> 
+</body> 
+</html>
