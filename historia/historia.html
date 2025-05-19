@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escuela EES19 - Historia</title>   
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+
+<body class="bg-amber-50 min-h-screen flex flex-col">
+
+  <!-- Encabezado -->
+  <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3" role="banner">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <h1 class="text-lg font-bold cursor-pointer">Escuela Secundaria 19</h1>
+      <button aria-label="Abrir menú" class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menú lateral -->
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs" role="navigation" aria-label="Menú principal">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" aria-label="Cerrar menú" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+    <a href="../index.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Inicio</a> 
+    <a href="../cicloBasico/cicloBasico.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Básico</a> 
+    <a href="../cicloSuperior/cicloSuperior.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Superior</a>
+    <a href="../contacto/contacto.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Contacto</a> 
+    <a href="../biblioteca/biblioteca.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Biblioteca</a>
+    <a href="../cooperadora/cooperadora.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Cooperadora</a>
+  </aside>  
+
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>  
+
+  <!-- Contenido principal -->
+  <main class="pt-20 max-w-6xl mx-auto p-6 flex-grow" role="main">
+    <h2 class="text-3xl font-bold text-amber-900 mb-6">Historia de la Escuela EES19</h2>
+
+    <section class="mb-8">
+      <h3 class="text-2xl font-semibold text-amber-900 mb-3">Fundación</h3>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        La Escuela de Educación Secundaria N° 19 "Paula Silvestro" fue fundada en el año <strong>1975</strong> por iniciativa de la comunidad educativa y el apoyo del municipio de Berazategui. Su nombre rinde homenaje a Paula Silvestro, una destacada educadora comprometida con la formación integral de los jóvenes de la región.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Desde sus inicios, la escuela ha trabajado con la misión de ofrecer una educación de calidad que prepare a los estudiantes para enfrentar los desafíos del mundo moderno, promoviendo valores como la solidaridad, el respeto y el esfuerzo.
+      </p>
+    </section>
+
+    <section class="mb-8">
+      <h3 class="text-2xl font-semibold text-amber-900 mb-3">Objetivos</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Brindar una formación integral que abarque tanto el aspecto académico como el desarrollo personal y social.</li>
+        <li>Fomentar el pensamiento crítico y la creatividad en los estudiantes.</li>
+        <li>Promover la participación activa en la comunidad y el respeto por el medio ambiente.</li>
+        <li>Preparar a los jóvenes para continuar sus estudios superiores o insertarse en el mundo laboral con competencias sólidas.</li>
+      </ul>
+    </section>
+
+    <section class="mb-8">
+      <h3 class="text-2xl font-semibold text-amber-900 mb-3">Escudo y Logo</h3>
+      <div class="flex flex-wrap gap-8 items-center">
+        <figure class="max-w-xs">
+          <img src="../assets/escudo.png" alt="Escudo de la Escuela EES19" class="rounded shadow-lg w-full" />
+          <figcaption class="text-center mt-2 text-gray-600">Escudo oficial</figcaption>
+        </figure>
+        <figure class="max-w-xs">
+          <img src="../assets/logo.png" alt="Logo de la Escuela EES19" class="rounded shadow-lg w-full" />
+          <figcaption class="text-center mt-2 text-gray-600">Logo institucional</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer fijo abajo -->
+  <footer class="bg-amber-800 text-white p-6 mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
+      <p>Teléfono: <a href="tel:+01142612992" class="underline hover:text-amber-300">(011) 4261-2992</a></p>
+      <p>Email: <a href="mailto:ees_19@hotmail.com.ar" class="underline hover:text-amber-300">ees_19@hotmail.com.ar</a></p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="historia.js"></script>  
+
+</body>
+</html>
