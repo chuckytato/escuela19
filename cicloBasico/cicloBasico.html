@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escuela EES19 - Ciclo Básico</title>  
+  <script src="https://cdn.tailwindcss.com"></script>
+</head> 
+
+<body class="bg-amber-50 min-h-screen flex flex-col">
+
+  <!-- Encabezado -->
+  <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3" role="banner">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <h1 class="text-lg font-bold cursor-pointer">Escuela Secundaria 19</h1>
+      <button aria-label="Abrir menú" class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menú lateral -->
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs" role="navigation" aria-label="Menú principal">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" aria-label="Cerrar menú" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+    <a href="../index.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Inicio</a> 
+    <a href="../cicloSuperior/cicloSuperior.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Superior</a> 
+    <a href="../contacto/contacto.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Contacto</a> 
+    <a href="../biblioteca/biblioteca.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Biblioteca</a>
+    <a href="../cooperadora/cooperadora.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Cooperadora</a>
+  </aside>  
+  
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>  
+
+  <!-- Contenido principal -->
+  <main class="pt-20 max-w-6xl mx-auto p-6 flex-grow" role="main">
+    <h2 class="text-2xl font-bold text-amber-900 mb-2">Ciclo Básico</h2>
+    <p class="text-gray-700">
+      Aquí encontrarás información relevante sobre el Ciclo Básico de la Escuela Secundaria 19.
+    </p>
+    <br>
+    <!-- Sección Materias -->
+    <section class="mb-8">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2">Materias</h3>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Matemática</li>
+        <li>Lengua y Literatura</li>
+        <li>Ciencias Naturales</li>
+        <li>Ciencias Sociales</li>
+        <li>Inglés</li>
+        <li>Educación Física</li>
+        <li>Arte</li>
+      </ul>
+    </section>
+
+    <!-- Sección Horas y Turnos -->
+    <section class="mb-8">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2">Horas y Turnos</h3>
+      <p class="text-gray-700 mb-2">
+        El Ciclo Básico cuenta con dos turnos: mañana y tarde.
+      </p>
+      <p class="text-gray-700">
+        La carga horaria semanal es de aproximadamente <strong>30 horas</strong>, distribuidas en jornadas de 5 a 6 horas diarias según el turno.
+      </p>
+    </section>
+
+    <!-- Sección Horas Adicionales -->
+    <section class="mb-8">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2">Horas Adicionales</h3>
+      <p class="text-gray-700 mb-2">
+        Además de las materias regulares, se realizan actividades complementarias en horas adicionales:
+      </p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Talleres de apoyo académico</li>
+        <li>Clases de música y arte</li>
+        <li>Deportes y recreación</li>
+      </ul>
+    </section>
+
+    <!-- Sección Buffet -->
+    <section>
+      <h3 class="text-2xl font-bold text-amber-900 mb-2">Buffet Escolar</h3>
+      <p class="text-gray-700 mb-2">
+        En el buffet de la escuela se ofrece desayuno, almuerzo y merienda.  
+      </p>
+      <p class="text-gray-700 mb-4">
+        Es importante que los estudiantes elijan con anticipación qué alimentos desean para cada momento del día, para asegurar la disponibilidad y evitar desperdicios.
+      </p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li><strong>Desayuno:</strong> leche, medialunas, yogur, frutas</li>
+        <li><strong>Almuerzo:</strong> platos calientes, ensaladas, jugos naturales</li>
+        <li><strong>Merienda:</strong> sandwiches, infusiones, frutas</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer fijo abajo -->
+  <footer class="bg-amber-800 text-white p-6 mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
+      <p>Teléfono: <a href="tel:+01142612992" class="underline hover:text-amber-300">(011) 4261-2992</a></p>
+      <p>Email: <a href="mailto:ees_19@hotmail.com.ar" class="underline hover:text-amber-300">ees_19@hotmail.com.ar</a></p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="cicloBasico.js"></script>  
+
+</body>
+</html>
