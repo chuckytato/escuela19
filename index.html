@@ -8,11 +8,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-amber-50">
+<body class="bg-amber-50 flex flex-col min-h-screen">
 
   <!-- Encabezado -->
   <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3">
-    <div class="flex justify-between items-center max-w-6xl mx-auto">
+    <div class="flex justify-between items-center max-w-6xl mx-auto px-4">
       <h1 class="text-lg font-bold cursor-pointer">Escuela Secundaria 19</h1>
       <div class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
         <div class="w-6 h-0.5 bg-white"></div>
@@ -23,26 +23,26 @@
   </header>
 
   <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs">
-  <div class="flex justify-between items-center mb-4">
-    <h2 class="text-xl font-bold text-amber-800">Menú</h2>
-    <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
-  </div>
-  <a href="cicloBasico/cicloBasico.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Básico</a>
-  <a href="cicloSuperior/cicloSuperior.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Superior</a>
-  <a href="biblioteca/biblioteca.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Biblioteca</a>
-  <a href="contacto/contacto.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Contacto</a>
-  <a href="cooperadora/cooperadora.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Cooperadora</a>
-</aside>  
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+    <a href="cicloBasico/cicloBasico.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Básico</a>
+    <a href="cicloSuperior/cicloSuperior.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Superior</a>
+    <a href="biblioteca/biblioteca.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Biblioteca</a>
+    <a href="contacto/contacto.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Contacto</a>
+    <a href="cooperadora/cooperadora.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Cooperadora</a>
+  </aside>  
 
   <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>
 
   <!-- Contenido principal -->
-  <main class="pt-24 px-4 space-y-12 max-w-3xl mx-auto">
+  <main class="flex-1 pt-24 px-4 sm:px-6 lg:px-8 space-y-12 max-w-4xl mx-auto">
 
     <!-- Sección Quiénes Somos -->
     <section id="quienes">
-      <h2 class="text-2xl font-bold text-amber-900 mb-2">Quiénes Somos</h2>
-      <p class="text-gray-700">
+      <h2 class="text-2xl sm:text-3xl font-bold text-amber-900 mb-2">Quiénes Somos</h2>
+      <p class="text-gray-700 text-sm sm:text-base">
         Somos una institución educativa comprometida con la formación integral de nuestros estudiantes, promoviendo valores, pensamiento crítico y creatividad.
       </p>
       <a href="quienesSomos/quienesSomos.html" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
@@ -50,8 +50,8 @@
 
     <!-- Sección Novedades -->
     <section id="novedades">
-      <h2 class="text-2xl font-bold text-amber-900 mb-2">Novedades</h2>
-      <p class="text-gray-700">
+      <h2 class="text-2xl sm:text-3xl font-bold text-amber-900 mb-2">Novedades</h2>
+      <p class="text-gray-700 text-sm sm:text-base">
         ¡Nueva sala de informática equipada! Además, este mes iniciamos talleres extracurriculares de robótica y arte digital.
       </p>
       <a href="novedades/novedades.html" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
@@ -59,8 +59,8 @@
 
     <!-- Sección Nuestra Historia -->
     <section id="historia">
-      <h2 class="text-2xl font-bold text-amber-900 mb-2">Nuestra Historia</h2>
-      <p class="text-gray-700">
+      <h2 class="text-2xl sm:text-3xl font-bold text-amber-900 mb-2">Nuestra Historia</h2>
+      <p class="text-gray-700 text-sm sm:text-base">
         Fundada en 1985, la Escuela Secundaria 19 ha acompañado el crecimiento educativo de generaciones, apostando siempre a la innovación pedagógica y al vínculo con la comunidad.
       </p>
       <a href="historia/historia.html" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
@@ -68,8 +68,8 @@
 
     <!-- Sección Ciclo Básico -->
     <section id="cicloBasico">
-      <h2 class="text-2xl font-bold text-amber-900 mb-2">Ciclo Básico - Primaria</h2>
-      <p class="text-gray-700">
+      <h2 class="text-2xl sm:text-3xl font-bold text-amber-900 mb-2">Ciclo Básico - Primaria</h2>
+      <p class="text-gray-700 text-sm sm:text-base">
         En esta etapa inicial, fomentamos las bases educativas y el desarrollo personal de los estudiantes con metodologías innovadoras y acompañamiento constante.
       </p>
       <a href="cicloBasico/cicloBasico.html" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
@@ -77,8 +77,8 @@
 
     <!-- Sección Ciclo Superior -->
     <section id="cicloSuperior">
-      <h2 class="text-2xl font-bold text-amber-900 mb-2">Ciclo Superior - Secundaria</h2>
-      <p class="text-gray-700">
+      <h2 class="text-2xl sm:text-3xl font-bold text-amber-900 mb-2">Ciclo Superior - Secundaria</h2>
+      <p class="text-gray-700 text-sm sm:text-base">
         En esta etapa preparamos a los jóvenes para la educación superior y la vida laboral, con un enfoque en la formación integral y habilidades para el futuro.
       </p>
       <a href="cicloSuperior/cicloSuperior.html" class="text-blue-600 hover:underline mt-1 inline-block">Ver más</a>
@@ -88,13 +88,12 @@
 
   <!-- Pie de Página -->
   <footer class="bg-amber-800 text-white p-6 mt-12">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-sm sm:text-base">
       <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
       <p>Teléfono: <a href="tel:+01142612992" class="underline hover:text-amber-300">(011) 4261-2992</a></p>
       <p>Email: <a href="mailto:ees_19@hotmail.com.ar" class="underline hover:text-amber-300">ees_19@hotmail.com.ar</a></p>
     </div>
   </footer>
-
   <!-- Script -->
   <script src="index.js"></script>
 
