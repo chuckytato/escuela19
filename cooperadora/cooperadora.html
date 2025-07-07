@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escuela EES19 - Cooperadora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-amber-50">
+
+  <!-- Encabezado -->
+  <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <h1 class="text-lg font-bold cursor-pointer">Escuela Secundaria 19</h1>
+      <div class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú lateral -->
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+    <a href="../index.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Inicio</a>
+    <a href="../cicloBasico/cicloBasico.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Básico</a>
+    <a href="../cicloSuperior/cicloSuperior.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Superior</a>
+    <a href="../biblioteca/biblioteca.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Biblioteca</a>
+    <a href="../contacto/contacto.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Contacto</a>
+  </aside>  
+
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>
+
+  <!-- Contenido principal -->
+  <main class="max-w-6xl mx-auto pt-20 p-6">
+   <!-- Sección Introducción -->
+<section id="introduccion" class="mb-6">
+  <h2 class="text-2xl font-bold text-amber-900 mb-2">Cooperadora Escolar</h2>
+  <p class="text-gray-700 mb-4">
+    La Cooperadora Escolar es una entidad fundamental para nuestra escuela. Está conformada por padres, docentes y vecinos que trabajan en conjunto para apoyar y mejorar la calidad educativa y las condiciones del establecimiento.
+  </p>
+</section>
+
+<!-- Sección Función -->
+<section id="funcion" class="mb-6">
+  <h2 class="text-2xl font-bold text-amber-900 mb-2">Función</h2>
+  <p class="text-gray-700 mb-4">
+    Su función principal es colaborar con la escuela mediante la recaudación de fondos y la organización de actividades que permiten adquirir materiales, reparar instalaciones y financiar proyectos educativos que benefician a toda la comunidad escolar.
+  </p>
+</section>
+
+<!-- Sección Importancia -->
+<section id="importancia" class="mb-6">
+  <h2 class="text-2xl font-bold text-amber-900 mb-2">Importancia del Aporte</h2>
+  <p class="text-gray-700 mb-4">
+    El aporte a la Cooperadora es muy importante, ya que garantiza la continuidad de estas mejoras y permite que nuestros estudiantes tengan un mejor ambiente para su aprendizaje. Además, ser parte de la Cooperadora implica involucrarse activamente en el desarrollo de la escuela.
+  </p>
+</section>
+
+<!-- Sección Invitación -->
+<section id="invitacion" class="mb-6">
+  <h2 class="text-2xl font-bold text-amber-900 mb-2">Invitación</h2>
+  <p class="text-gray-700 mb-4">
+    Te invitamos a sumarte y colaborar para que juntos podamos seguir construyendo un mejor futuro para nuestros jóvenes.
+  </p>
+</section>
+
+<!-- Sección Contacto -->
+<section id="contacto">
+  <h2 class="text-2xl font-bold text-amber-900 mb-2">Contacto</h2>
+  <ul class="list-disc list-inside text-gray-700">
+    <li><i class="fa-solid fa-phone mr-2 text-amber-700"></i> Teléfono: +54 11 4261-2992</li>
+    <li><i class="fa-solid fa-location-dot mr-2 text-amber-700"></i> Dirección: Calle 19 entre 111 y 112</li>
+    <li><i class="fa-solid fa-location-dot mr-2 text-amber-700"></i>Localidad: Berazategui, Buenos Aires</li>
+</ul>
+</section>      
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer class="bg-amber-800 text-white p-6 ">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
+      <p>Teléfono: <a href="tel:+01142612992" class="underline hover:text-amber-300">(011) 4261-2992</a></p>
+      <p>Email: <a href="mailto:ees_19@hotmail.com.ar" class="underline hover:text-amber-300">ees_19@hotmail.com.ar</a></p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="cooperadora.js"></script>
+
+</body>
+</html>

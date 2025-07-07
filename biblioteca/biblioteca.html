@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca - EES N°19</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-amber-50 min-h-screen flex flex-col">
+
+  <!-- Encabezado -->
+  <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3">
+    <div class="flex justify-between items-center max-w-6xl mx-auto">
+      <div class="flex items-center gap-2 cursor-pointer">
+        <h1 class="text-lg font-bold">Escuela Secundaria 19</h1>
+      </div>
+      <div class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú lateral -->
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+    <a href="../index.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Inicio</a>
+    <a href="../cicloBasico/cicloBasico.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Básico</a>
+    <a href="../cicloSuperior/cicloSuperior.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Ciclo Superior</a>
+    <a href="../contacto/contacto.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Contacto</a>
+    <a href="../cooperadora/cooperadora.html" class="block w-full py-2 px-4 bg-amber-100 hover:bg-amber-200 rounded text-left">Cooperadora</a>
+  </aside>
+
+  <!-- Overlay -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>
+
+  <!-- Main -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 py-8 space-y-8 w-full pt-20">
+    <section>
+      <h2 class="text-3xl font-bold text-amber-900 mb-6">Biblioteca</h2>
+      <div id="bookList" class="flex flex-col gap-3 max-w-xl mx-auto">
+        <!-- Botones cargados por JS -->
+      </div>
+    </section>
+
+    <section id="visorPdfContainer" class="hidden flex flex-col items-center max-w-5xl mx-auto">
+      <a id="linkPdf" href="" target="_blank" class="text-amber-800 underline font-semibold mb-4 hover:text-amber-600">
+        Abrir PDF en Google Drive
+      </a>
+      <p id="nombreLibro" class="text-amber-900 font-semibold text-lg"></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-amber-800 text-white p-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
+      <p>Teléfono: <a href="tel:+01142612992" class="underline hover:text-amber-300">(011) 4261-2992</a></p>
+      <p>Email: <a href="mailto:ees_19@hotmail.com.ar" class="underline hover:text-amber-300">ees_19@hotmail.com.ar</a></p>
+    </div>
+  </footer>
+
+  <script src="biblioteca.js"></script>
+</body>
+</html>
