@@ -10,17 +10,29 @@
 
 <body class="bg-amber-50">
 
-  <!-- Encabezado -->
-  <header class="fixed top-0 left-0 w-full bg-amber-800 text-white shadow z-50 p-3">
-    <div class="flex justify-between items-center max-w-6xl mx-auto">
-      <h1 class="text-lg font-bold cursor-pointer">Escuela Secundaria 19</h1>
-      <div class="space-y-1.5 cursor-pointer" onclick="toggleMenu()">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-[#800000] text-white shadow z-50">
+    <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
+      <div class="flex items-center space-x-3">
+        <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md" />
+        <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
+        <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
+      </div>
+      <nav class="hidden md:flex space-x-4 text-sm lg:text-base">
+        <a href="../index.html" class="border-b-2 border-amber-300 hover:text-amber-300">Inicio</a>
+        <a href="../cicloBasico/cicloBasico.html" class="hover:text-amber-300">Ciclo Básico</a>
+        <a href="../cicloSuperior/cicloSuperior.html" class="hover:text-amber-300">Ciclo Superior</a>
+        <a href="../biblioteca/biblioteca.html" class="hover:text-amber-300">Biblioteca</a>
+        <a href="../contacto/contacto.html" class="hover:text-amber-300">Contacto</a>
+        <a href="../cooperadora/cooperadora.html" class="hover:text-amber-300">Cooperadora</a>
+      </nav>
+      <div class="space-y-1 cursor-pointer md:hidden" onclick="toggleMenu()">
         <div class="w-6 h-0.5 bg-white"></div>
         <div class="w-6 h-0.5 bg-white"></div>
         <div class="w-6 h-0.5 bg-white"></div>
       </div>
     </div>
-  </header>
+  </header> 
 
   <!-- Menú lateral -->
   <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs">
@@ -83,13 +95,9 @@
 
   </main>
 
-  <!-- Pie de Página -->
-  <footer class="bg-amber-800 text-white p-6 ">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-      <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
-      <p>Teléfono: <a href="tel:+01142612992" class="underline hover:text-amber-300">(011) 4261-2992</a></p>
-      <p>Email: <a href="mailto:ees_19@hotmail.com.ar" class="underline hover:text-amber-300">ees_19@hotmail.com.ar</a></p>
-    </div>
+  <!-- Footer -->
+  <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
+    <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
   </footer>
 
   <!-- Script -->
