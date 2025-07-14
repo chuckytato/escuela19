@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fecha: "2025-07-10",
       titulo: "Clases de Educacion Fisica",
       imagen: "../imagenes/edu.jpg",
-      descripcion: "Prcatica de jabalina."
+      descripcion: "Practica de jabalina."
     },
   ];
 
