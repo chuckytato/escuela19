@@ -16,55 +16,55 @@ function toggleMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   const novedades = [
     {
-      fecha: "2025-03-01",
+      fecha: "",
       titulo: "Inicio de clases 2025",
       imagen: "../imagenes/inicio_de_clases.jpg",
       descripcion: "La escuela inicia el ciclo lectivo el 1 de marzo con todas las medidas sanitarias correspondientes."
     },
     {
-      fecha: "2025-06-01",
+      fecha: "",
       titulo: "Clases de natación",
       imagen: "../imagenes/nata.jpg",
       descripcion: "Las clases de natación con los chicos."
     },
     {
-      fecha: "2025-06-05",
+      fecha: "",
       titulo: "Caminata",
       imagen: "../imagenes/caminata.jpg",
       descripcion: "Caminata recreativa por Berazategui con los alumnos."
     },
     {
-      fecha: "2025-06-10",
+      fecha: "",
       titulo: "Competencia deportiva",
       imagen: "../imagenes/deporte.jpg",
       descripcion: "Participación de la escuela en torneo intercolegial de atletismo."
     },
     {
-      fecha: "2025-06-15",
+      fecha: "",
       titulo: "Excursión a museo",
       imagen: "../imagenes/museo.jpg",
       descripcion: "Salida educativa al museo de ciencias naturales para 3° año."
     },
     {
-      fecha: "2025-06-20",
+      fecha: "",
       titulo: "Feria de ciencias",
       imagen: "../imagenes/feria.jpg",
       descripcion: "Presentación de proyectos científicos elaborados por los estudiantes."
     },
     {
-      fecha: "2025-06-25",
+      fecha: "",
       titulo: "Se organizo la Competencia de ajedrez en la escuela",
       imagen: "../imagenes/aje.jpg",
       descripcion: "Competencia interescolar que pone a prueba la mente."
     },
     {
-      fecha: "2025-07-05",
+      fecha: "",
       titulo: "Se realizo el Acto del Dia de la Independencia",
       imagen: "../imagenes/acto.jpg",
       descripcion: "Acto del 9 de julio."
     },
     {
-      fecha: "2025-07-10",
+      fecha: "",
       titulo: "Clases de Educacion Fisica",
       imagen: "../imagenes/edu.jpg",
       descripcion: "Practica de jabalina en educacion fisica."
