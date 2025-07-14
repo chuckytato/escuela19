@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     card.innerHTML = `
       <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 sm:h-60 object-cover object-center" />
       <div class="p-4 flex-grow flex flex-col justify-between">
-        <time datetime="${novedad.fecha}" class="block text-sm text-amber-600 font-semibold mb-2">${formatearFecha(novedad.fecha)}</time>
         <h3 class="text-xl font-bold text-amber-900 mb-2">${novedad.titulo}</h3>
         <p class="text-gray-700">${novedad.descripcion}</p>
       </div>
