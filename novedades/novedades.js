@@ -16,9 +16,9 @@ function toggleMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   const novedades = [
     {
-      fecha: "2025-05-30",
+      fecha: "2025-03-01",
       titulo: "Inicio de clases 2025",
-      imagen: "https://via.placeholder.com/400x200?text=Inicio+de+clases",
+      imagen: "../imagenes/inicio_de_clases.jpg",
       descripcion: "La escuela inicia el ciclo lectivo el 1 de marzo con todas las medidas sanitarias correspondientes."
     },
     {
