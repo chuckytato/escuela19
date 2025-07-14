@@ -29,26 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       fecha: "2025-06-05",
-      titulo: "Taller de robótica",
-      imagen: "https://via.placeholder.com/400x200?text=Taller+de+Robótica",
-      descripcion: "Comienza el taller semanal de robótica para estudiantes de ciclo superior."
+      titulo: "Caminata",
+      imagen: "../imagenes/caminata.jpg",
+      descripcion: "Caminata recreativa por Berazategui."
     },
     {
       fecha: "2025-06-10",
       titulo: "Competencia deportiva",
-      imagen: "https://via.placeholder.com/400x200?text=Competencia+Deportiva",
+      imagen: "../imagenes/compe.jpg",
       descripcion: "Participación de la escuela en torneo intercolegial de atletismo."
     },
     {
       fecha: "2025-06-15",
       titulo: "Excursión a museo",
-      imagen: "https://via.placeholder.com/400x200?text=Excursión+Museo",
+      imagen: "../imagenes/museo.jpg",
       descripcion: "Salida educativa al museo de ciencias naturales para 3° año."
     },
     {
       fecha: "2025-06-20",
       titulo: "Feria de ciencias",
-      imagen: "https://via.placeholder.com/400x200?text=Feria+de+Ciencias",
+      imagen: "../imagenes/feria.jpg",
       descripcion: "Presentación de proyectos científicos elaborados por los estudiantes."
     },
     {
