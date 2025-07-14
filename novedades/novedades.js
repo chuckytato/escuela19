@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = "bg-white rounded-lg shadow-md overflow-hidden max-w-xl mx-auto";
 
     card.innerHTML = `
-      <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 object-cover" />
+      <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 sm:h-60 object-cover object-center" />
       <div class="p-4">
         <time datetime="${novedad.fecha}" class="block text-sm text-amber-600 font-semibold mb-2">${formatearFecha(novedad.fecha)}</time>
         <h3 class="text-xl font-bold text-amber-900 mb-2">${novedad.titulo}</h3>
