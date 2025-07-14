@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       fecha: "2025-06-01",
-      titulo: "Renovación de biblioteca",
-      imagen: "https://via.placeholder.com/400x200?text=Biblioteca+Renovada",
-      descripcion: "Se han incorporado más de 500 libros nuevos y espacios de estudio para alumnos."
+      titulo: "Clases de natación",
+      imagen: "../imagenes/nata.jpg",
+      descripcion: "Las clases de natación."
     },
     {
       fecha: "2025-06-05",
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       fecha: "2025-06-10",
       titulo: "Competencia deportiva",
-      imagen: "../imagenes/compe.jpg",
+      imagen: "../imagenes/deporte.jpg",
       descripcion: "Participación de la escuela en torneo intercolegial de atletismo."
     },
     {
@@ -53,27 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       fecha: "2025-06-25",
-      titulo: "Campaña de reciclaje",
-      imagen: "https://via.placeholder.com/400x200?text=Campaña+de+Reciclaje",
-      descripcion: "Nueva campaña para fomentar el reciclaje en la comunidad educativa."
-    },
-    {
-      fecha: "2025-06-30",
-      titulo: "Charla sobre salud mental",
-      imagen: "https://via.placeholder.com/400x200?text=Charla+Salud+Mental",
-      descripcion: "Especialistas visitan la escuela para concientizar sobre la salud mental."
+      titulo: "Competencia de ajedrez",
+      imagen: "../imagenes/aje.jpg",
+      descripcion: "Competencia interescolar que pone a prueba la mente."
     },
     {
       fecha: "2025-07-05",
-      titulo: "Reunión de padres",
-      imagen: "https://via.placeholder.com/400x200?text=Reunión+de+Padres",
-      descripcion: "Convocatoria a reunión general con los padres para informar sobre el segundo trimestre."
+      titulo: "Acto Dia de la Independencia",
+      imagen: "../imagenes/acto.jpg",
+      descripcion: "Acto del 9 de julio."
     },
     {
       fecha: "2025-07-10",
-      titulo: "Inscripciones abiertas",
-      imagen: "https://via.placeholder.com/400x200?text=Inscripciones+Abiertas",
-      descripcion: "Se abre el período de inscripción para el ciclo lectivo 2026."
+      titulo: "Clases de Educacion Fisica",
+      imagen: "../imagenes/edu.jpg",
+      descripcion: "Prcatica de jabalina."
     },
   ];
 
