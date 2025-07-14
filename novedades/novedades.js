@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
       fecha: "2025-06-01",
       titulo: "Clases de natación",
       imagen: "../imagenes/nata.jpg",
-      descripcion: "Las clases de natación."
+      descripcion: "Las clases de natación con los chicos."
     },
     {
       fecha: "2025-06-05",
       titulo: "Caminata",
       imagen: "../imagenes/caminata.jpg",
-      descripcion: "Caminata recreativa por Berazategui."
+      descripcion: "Caminata recreativa por Berazategui con los alumnos."
     },
     {
       fecha: "2025-06-10",
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       fecha: "2025-06-25",
-      titulo: "Competencia de ajedrez",
+      titulo: "Se organizo la Competencia de ajedrez en la escuela",
       imagen: "../imagenes/aje.jpg",
       descripcion: "Competencia interescolar que pone a prueba la mente."
     },
     {
       fecha: "2025-07-05",
-      titulo: "Acto Dia de la Independencia",
+      titulo: "Se realizo el Acto del Dia de la Independencia",
       imagen: "../imagenes/acto.jpg",
       descripcion: "Acto del 9 de julio."
     },
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fecha: "2025-07-10",
       titulo: "Clases de Educacion Fisica",
       imagen: "../imagenes/edu.jpg",
-      descripcion: "Practica de jabalina."
+      descripcion: "Practica de jabalina en educacion fisica."
     },
   ];
 
@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   novedades.forEach((novedad) => {
     const card = document.createElement("article");
-card.className = "bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-[400px]";
+    card.className = "bg-white rounded-lg shadow-md overflow-hidden max-w-xl mx-auto";
 
     card.innerHTML = `
-    <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 sm:h-56 object-cover object-center" />
+      <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 sm:h-60 object-cover object-center" />
       <div class="p-4">
         <time datetime="${novedad.fecha}" class="block text-sm text-amber-600 font-semibold mb-2">${formatearFecha(novedad.fecha)}</time>
         <h3 class="text-xl font-bold text-amber-900 mb-2">${novedad.titulo}</h3>
