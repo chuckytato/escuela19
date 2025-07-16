@@ -5,28 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Escuela EES19 - Ciclo Superior</title>  
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      opacity: 0;
+      animation: fadeInBody 0.6s ease-in-out forwards;
+    }
+    @keyframes fadeInBody {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head> 
 
 <body class="bg-amber-50 min-h-screen flex flex-col">
- <!-- Header -->
+  <!-- Header -->
   <header class="fixed top-0 left-0 w-full bg-[#800000] text-white shadow z-50">
-   <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
-  <div class="flex items-center space-x-3">
-    <a href="../index.html" class="flex items-center space-x-3">
-      <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md" />
-      <div>
-        <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
-        <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
+    <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
+      <div class="flex items-center space-x-3">
+        <a href="../index.html" class="flex items-center space-x-3">
+          <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md transition-transform duration-300 hover:scale-105" />
+          <div>
+            <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
+            <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
       <nav class="hidden md:flex space-x-4 text-sm lg:text-base">
-        <a href="../index.html" class="hover:text-amber-300">Inicio</a>
-        <a href="../cicloBasico/cicloBasico.html" class="hover:text-amber-300">Ciclo Básico</a>
-        <a href="../cicloSuperior/cicloSuperior.html" class="border-b-2 border-amber-300 hover:text-amber-300">Ciclo Superior</a>
-        <a href="../biblioteca/biblioteca.html" class="hover:text-amber-300">Biblioteca</a>
-        <a href="../contacto/contacto.html" class="hover:text-amber-300">Contacto</a>
-        <a href="../cooperadora/cooperadora.html" class="hover:text-amber-300">Cooperadora</a>
+        <a href="../index.html" class="hover:text-amber-300 transition-colors duration-300">Inicio</a>
+        <a href="../cicloBasico/cicloBasico.html" class="hover:text-amber-300 transition-colors duration-300">Ciclo Básico</a>
+        <a href="../cicloSuperior/cicloSuperior.html" class="border-b-2 border-amber-300 hover:text-amber-300 transition-colors duration-300">Ciclo Superior</a>
+        <a href="../biblioteca/biblioteca.html" class="hover:text-amber-300 transition-colors duration-300">Biblioteca</a>
+        <a href="../contacto/contacto.html" class="hover:text-amber-300 transition-colors duration-300">Contacto</a>
+        <a href="../cooperadora/cooperadora.html" class="hover:text-amber-300 transition-colors duration-300">Cooperadora</a>
       </nav>
       <div class="space-y-1 cursor-pointer md:hidden" onclick="toggleMenu()">
         <div class="w-6 h-0.5 bg-white"></div>
@@ -37,142 +50,93 @@
   </header>
 
   <!-- Menú móvil -->
-  <aside id="menuDrawer"
-    class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs md:hidden">
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs md:hidden">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl font-bold text-amber-800">Menú</h2>
-      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
+      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">&#10005;</button>
     </div>
-    <a href="../index.html" class="flex items-center gap-2 w-full py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition font-semibold rounded shadow-md">
-      Inicio
-    </a>
-    <a href="../cicloBasico/cicloBasico.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo
-      Básico</a>
-      <a href="../cicloSuperior/cicloSuperior.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">
-        <span>➤</span>
-        CicloSuperior
-      </a>
-        <a href="../biblioteca/biblioteca.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 rounded">Biblioteca</a>
-    <a href="../contacto/contacto.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Contacto</a>
-    <a href="../cooperadora/cooperadora.html"
-      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Cooperadora</a>
+    <a href="../index.html" class="flex items-center gap-2 w-full py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 font-semibold rounded shadow-md">Inicio</a>
+    <a href="../cicloBasico/cicloBasico.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Ciclo Básico</a>
+    <a href="../cicloSuperior/cicloSuperior.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Ciclo Superior</a>
+    <a href="../biblioteca/biblioteca.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Biblioteca</a>
+    <a href="../contacto/contacto.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Contacto</a>
+    <a href="../cooperadora/cooperadora.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Cooperadora</a>
   </aside>
   <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden" onclick="toggleMenu()"></div>
 
   <!-- Contenido principal -->
   <main class="pt-20 max-w-6xl mx-auto p-6 flex-grow" role="main">
-    <h2 class="text-2xl font-bold text-amber-900 mb-2">Ciclo Superior</h2>
-    <p class="text-gray-700 mb-4">
+    <h2 class="text-2xl font-bold text-amber-900 mb-4" data-aos="fade-up">Ciclo Superior</h2>
+    <p class="text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="100">
       El Ciclo Superior de la Escuela Secundaria 19 ofrece una formación especializada y orientada a preparar a los estudiantes para sus proyectos futuros y la inserción laboral o universitaria.
     </p>
 
-    <!-- Sección Orientaciones -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Orientaciones</h3>
-      <p class="text-gray-700 mb-2">
-        En el Ciclo Superior podés elegir entre las siguientes orientaciones:
-      </p>
-      <ul class="list-disc list-inside text-gray-700">
-        <li>Ciencias Naturales</li>
-        <li>Arte Visuales</li>
-        <li>Modalidad de Educación Física</li>
+    <!-- Secciones -->
+    <section class="mb-8 bg-white shadow-md rounded-lg p-6" data-aos="fade-up">
+      <h3 class="text-2xl font-bold text-amber-900 mb-4 hover:scale-105 transition-transform">Orientaciones</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>🔬 Ciencias Naturales</li>
+        <li>🎨 Artes Visuales</li>
+        <li>🏃 Educación Física</li>
       </ul>
     </section>
 
-    <!-- Sección Materias -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Materias</h3>
-      <ul class="list-disc list-inside text-gray-700">
-        <li>Matemática</li>
-        <li>Lengua y Literatura</li>
-        <li>Ciencias Naturales</li>
-        <li>Educación Física</li>
-        <li>Arte</li>
-        <li>Historia</li>
-        <li>Inglés</li>
+    <section class="mb-8 bg-white shadow-md rounded-lg p-6" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-2xl font-bold text-amber-900 mb-4 hover:scale-105 transition-transform">Materias</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>📘 Matemática</li>
+        <li>📖 Lengua y Literatura</li>
+        <li>🧪 Ciencias Naturales</li>
+        <li>🏃 Educación Física</li>
+        <li>🎨 Arte</li>
+        <li>📚 Historia</li>
+        <li>🗣 Inglés</li>
       </ul>
     </section>
 
-    <!-- Sección Horas y Turnos -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Horas y Turnos</h3>
-      <p class="text-gray-700">
-        El Ciclo Superior cuenta con dos turnos: mañana y tarde.  
-      </p>
-      <p class="text-gray-700">
-        La carga horaria semanal es de aproximadamente <strong>30 horas</strong>, distribuidas en jornadas de 5 a 6 horas diarias según el turno.
-      </p>
-    </section>
-
-    <!-- Sección Proyectos Último Año -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Proyectos en el Último Año</h3>
-      <p class="text-gray-700 mb-2">
-        En el último año, los estudiantes participan en proyectos integradores que fomentan el trabajo en equipo y la aplicación práctica de los conocimientos adquiridos. Algunos ejemplos son:
-      </p>
-      <ul class="list-disc list-inside text-gray-700">
-        <li>Investigaciones científicas en el área de Ciencias Naturales</li>
-        <li>Producción artística y muestras culturales</li>
-        <li>Organización y desarrollo de actividades deportivas y recreativas</li>
-        <li>Proyectos de intervención comunitaria y social</li>
+    <section class="mb-8 bg-white shadow-md rounded-lg p-6" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-2xl font-bold text-amber-900 mb-4 hover:scale-105 transition-transform">Proyectos del Último Año</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>🔬 Investigaciones científicas</li>
+        <li>🎭 Muestras artísticas</li>
+        <li>⚽ Actividades deportivas</li>
+        <li>🤝 Proyectos comunitarios</li>
       </ul>
     </section>
 
-   <!-- Bachiller en Ciencias Naturales -->
-<section class="mb-8">
-  <h3 class="text-2xl font-bold text-amber-900 mb-2">Bachiller en Ciencias Naturales</h3>
-  <p class="text-gray-700 mb-2">
-    Esta orientación profundiza en el estudio de la biología, la química y la física, fomentando el pensamiento científico, la experimentación y la investigación. 
-  </p>
-  <p class="text-gray-700">
-    Es ideal para quienes se interesan por las ciencias y desean continuar estudios en áreas como medicina, bioquímica, enfermería, veterinaria o afines.
-  </p>
-</section>
-
-<!-- Bachiller en Artes Visuales -->
-<section class="mb-8">
-  <h3 class="text-2xl font-bold text-amber-900 mb-2">Bachiller en Artes Visuales</h3>
-  <p class="text-gray-700 mb-2">
-    Esta orientación permite desarrollar la creatividad a través de distintas expresiones artísticas como dibujo, pintura, escultura, fotografía y diseño.
-  </p>
-  <p class="text-gray-700">
-    Los estudiantes participan en producciones individuales y colectivas, y en muestras culturales. Es una base para carreras artísticas o de diseño.
-  </p>
-</section>
-
-<!-- Bachiller con orientación en Educación Física -->
-<section class="mb-8">
-  <h3 class="text-2xl font-bold text-amber-900 mb-2">Bachiller con Orientación en Educación Física</h3>
-  <p class="text-gray-700 mb-2">
-    Esta orientación promueve hábitos saludables, el trabajo en equipo y el conocimiento del cuerpo a través del movimiento.
-  </p>
-  <p class="text-gray-700">
-    Aunque no habilita como instructor o personal trainer, brinda nociones básicas sobre entrenamiento, juegos deportivos y preparación física, siendo una buena base para carreras en educación física o deportes.
-  </p>
-</section>
-
-    <!-- Nota sobre Buffet y Horas Adicionales -->
-    <section>
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Información Importante</h3>
-      <p class="text-gray-700 mb-2">
-        En el Ciclo Superior ya no se ofrece servicio de buffet escolar.
-      </p>
-      <p class="text-gray-700">
-        Tampoco se realizan actividades en horas adicionales como en el Ciclo Básico.
-      </p>
-    </section>
-  </main>
-
+ <!-- Bachilleratos -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up">
+        <h3 class="text-xl font-bold text-amber-900 mb-2">🔬 Ciencias Naturales</h3>
+        <p class="text-gray-700 mb-1">Biología, química y física para fomentar el pensamiento científico y la investigación.</p>
+        <p class="text-gray-700 text-sm">Ideal para carreras como medicina, bioquímica, enfermería o veterinaria.</p>
+      </div>
+      <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold text-amber-900 mb-2">🎨 Artes Visuales</h3>
+        <p class="text-gray-700 mb-1">Dibujo, pintura, escultura, fotografía y diseño.</p>
+        <p class="text-gray-700 text-sm">Fomenta la creatividad y la producción artística para continuar estudios en arte o diseño.</p>
+      </div>
+      <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold text-amber-900 mb-2">🏃 Educación Física</h3>
+        <p class="text-gray-700 mb-1">Promueve el movimiento, hábitos saludables y el trabajo en equipo.</p>
+        <p class="text-gray-700 text-sm">Buena base para carreras en educación física o deportes.</p>
+      </div>
+    </div>
+</main>
   <!-- Botón volver arriba -->
   <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
     class="fixed bottom-4 right-4 bg-[#800000] text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition duration-300 z-40">
     ↑
   </button>
-    <!-- Footer fijo abajo -->
-  <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
-    <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
-  </footer>
-  <!-- Script -->
-  <script src="cicloSuperior.js"></script>  
+<!-- Footer -->
+<footer class="bg-[#800000] text-white p-6 mt-12 text-center w-full">
+  <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
+</footer>
+
+  <!-- Scripts -->  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="cicloSuperior.js"></script>
 </body>
 </html>
+
