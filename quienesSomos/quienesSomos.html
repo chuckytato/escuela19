@@ -4,21 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quiénes Somos - EES N°19</title>
+  <meta name="description" content="Conocé más sobre la Escuela Secundaria N°19 Paula Silvestro. Historia, misión, ubicación y redes sociales.">
+  <meta name="keywords" content="Escuela secundaria, Paula Silvestro, Berazategui, educación, EES 19">
+  <meta name="author" content="EES N°19">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => AOS.init());</script>
 </head>
-<body class="bg-amber-50 text-gray-800" onload="document.body.classList.remove('overflow-hidden')">
- <!-- Header -->
+<body class="bg-amber-50 text-gray-800">
+
+  <!-- Header -->
   <header class="fixed top-0 left-0 w-full bg-[#800000] text-white shadow z-50">
-   <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
-  <div class="flex items-center space-x-3">
-    <a href="../index.html" class="flex items-center space-x-3">
-      <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md" />
-      <div>
-        <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
-        <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
+    <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
+      <div class="flex items-center space-x-3">
+        <a href="../index.html" class="flex items-center space-x-3">
+          <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md" />
+          <div>
+            <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
+            <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
       <nav class="hidden md:flex space-x-4 text-sm lg:text-base">
         <a href="../index.html" class="hover:text-amber-300">Inicio</a>
         <a href="../cicloBasico/cicloBasico.html" class="hover:text-amber-300">Ciclo Básico</a>
@@ -36,28 +43,24 @@
   </header>
 
   <!-- Menú móvil -->
-  <aside id="menuDrawer"
-    class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs md:hidden">
+  <aside id="menuDrawer" class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs md:hidden">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl font-bold text-amber-800">Menú</h2>
       <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
     </div>
     <a href="../index.html" class="flex items-center gap-2 w-full py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition font-semibold rounded shadow-md">Inicio</a>
-    <a href="../cicloBasico/cicloBasico.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo
-      Básico</a>
-    <a href="../cicloSuperior/cicloSuperior.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo
-      Superior</a>
+    <a href="../cicloBasico/cicloBasico.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo Básico</a>
+    <a href="../cicloSuperior/cicloSuperior.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo Superior</a>
     <a href="../biblioteca/biblioteca.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 rounded">Biblioteca</a>
     <a href="../contacto/contacto.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Contacto</a>
-    <a href="../cooperadora/cooperadora.html"
-      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Cooperadora</a>
+    <a href="../cooperadora/cooperadora.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Cooperadora</a>
   </aside>
   <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden" onclick="toggleMenu()"></div>
 
-  <!-- Sección Principal -->
-<main class="max-w-6xl mx-auto px-4 pt-20 pb-8 space-y-12">
+  <!-- Contenido principal -->
+  <main class="max-w-6xl mx-auto px-4 pt-20 pb-8 space-y-8">
     <!-- Quiénes Somos -->
-    <section>
+    <section data-aos="fade-up" class="bg-white p-6 rounded shadow">
       <h2 class="text-3xl font-bold text-amber-800 mb-4">Quiénes Somos</h2>
       <p class="text-lg leading-relaxed">
         La Escuela de Educación Secundaria N° 19 "Paula Silvestro" es una institución pública ubicada en Berazategui, Provincia de Buenos Aires. Comprometida con la formación integral de sus estudiantes, promueve valores, pensamiento crítico y creatividad.
@@ -67,69 +70,70 @@
       </p>
     </section>
 
-        <!-- historia -->
-    <section>
-  <h2 class="text-3xl font-bold text-amber-800 mb-4">Historia</h2>
-  <p class="text-lg leading-relaxed">
-    La EES N° 19 "Paula Silvestro" comenzó en 1997 como parte del 3° ciclo de la EP N° 27, primero bajo el nombre ESB 26. En 2005 pasó a ser Jornada Extendida, modalidad que mantiene hasta hoy. En 2010 se transforma en secundaria completa de seis años, con orientaciones en Ciencias Naturales, Educación Física y Artes Visuales.
-  </p>
-  <p class="text-lg leading-relaxed mt-4">
-    En 2018 adopta oficialmente el nombre de su primera directora, Paula Silvestro, reconociendo su compromiso con la educación pública. Actualmente funciona en doble turno, de 7:40 a 20:15 hs.
-  </p>
-</section>
+    <!-- Historia -->
+    <section data-aos="fade-up" class="bg-white p-6 rounded shadow">
+      <h2 class="text-3xl font-bold text-amber-800 mb-4">Historia</h2>
+      <p class="text-lg leading-relaxed">
+        La EES N° 19 "Paula Silvestro" comenzó en 1997 como parte del 3° ciclo de la EP N° 27, primero bajo el nombre ESB 26. En 2005 pasó a ser Jornada Extendida, modalidad que mantiene hasta hoy. En 2010 se transforma en secundaria completa de seis años, con orientaciones en Ciencias Naturales, Educación Física y Artes Visuales.
+      </p>
+      <p class="text-lg leading-relaxed mt-4">
+        En 2018 adopta oficialmente el nombre de su primera directora, Paula Silvestro, reconociendo su compromiso con la educación pública. Actualmente funciona en doble turno, de 7:40 a 20:15 hs.
+      </p>
+    </section>
 
-    <!-- Imágenes -->
-    <section>
+    <!-- Galería -->
+    <section data-aos="fade-up">
       <h2 class="text-3xl font-bold text-amber-800 mb-4">Galería</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <img src="../imagenes/inicio_de_clases.jpg" alt="Imagen 1" class="rounded shadow" />
-        <img src="../imagenes/novedades.jpg" alt="Imagen 2" class="rounded shadow" />
-        <img src="../imagenes/caminata.jpg" alt="Imagen 3" class="rounded shadow" />
+        <img src="../imagenes/inicio_de_clases.jpg" alt="Inicio de clases" class="rounded shadow-md" />
+        <img src="../imagenes/novedades.jpg" alt="Novedades" class="rounded shadow-md" />
+        <img src="../imagenes/caminata.jpg" alt="Caminata" class="rounded shadow-md" />
       </div>
     </section>
 
- <section>
-  <h2 class="text-3xl font-bold text-amber-800 mb-4">Encuentranos</h2>
+    <!-- Ubicación -->
+    <section data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-amber-800 mb-4">Encuéntranos</h2>
+      <div class="mt-4 w-full h-[400px] md:h-[600px] rounded shadow overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.234511109427!2d-58.24451108477702!3d-34.7857976804499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3292f6177b8df%3A0xaf4833877686e33c!2sEscuela%20Secundaria%20N%C2%B019%20Paula%20Silvestro!5e0!3m2!1ses!2sar!4v1683477426938!5m2!1ses!2sar"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Ubicación EES N°19">
+        </iframe>
+      </div>
+    </section>
 
-<div class="mt-4 w-full h-[400px] md:h-[600px] rounded shadow overflow-hidden">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.234511109427!2d-58.24451108477702!3d-34.7857976804499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3292f6177b8df%3A0xaf4833877686e33c!2sEscuela%20Secundaria%20N%C2%B019%20Paula%20Silvestro!5e0!3m2!1ses!2sar!4v1683477426938!5m2!1ses!2sar"
-    width="100%" 
-    height="100%" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Ubicación EES N°19"
-  ></iframe>
-</div>
-</section>
+    <!-- CTA -->
+    <div class="text-center" data-aos="zoom-in">
+      <a href="../contacto/contacto.html" class="bg-amber-600 text-white px-6 py-3 mt-8 inline-block rounded shadow hover:bg-amber-700 transition">
+        Contactanos para más información
+      </a>
+    </div>
 
-
-   <!-- Redes Sociales -->
-<section>
-  <h2 class="text-3xl font-bold text-amber-800 mb-2">Síguenos en Redes Sociales</h2>
-  <div class="flex space-x-6">
-    <a href="https://www.facebook.com/ees19/" target="_blank" aria-label="Facebook" class="text-blue-600 hover:text-blue-800">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.594 1.324-1.326V1.326C24 .593 23.406 0 22.675 0z"/>
-      </svg>
-    </a>
-    <a href="https://www.instagram.com/ees19_berazategui/" target="_blank" aria-label="Instagram" class="text-pink-600 hover:text-pink-800">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
-      </svg>
-    </a>
-    <a href="https://www.youtube.com/@ees19berazategui" target="_blank" aria-label="YouTube" class="text-red-600 hover:text-red-800">
-      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M19.615 3.184a3.01 3.01 0 012.12 2.12c.507 1.877.507 5.796.507 5.796s0 3.92-.507 5.797a3.01 3.01 0 01-2.12 2.12c-1.877.507-7.615.507-7.615.507s-5.737 0-7.614-.507a3.01 3.01 0 01-2.12-2.12C1.384 15.02 1.384 11.1 1.384 11.1s0-3.92.507-5.797a3.01 3.01 0 012.12-2.12C5.888 2.677 11.626 2.677 11.626 2.677s5.738 0 7.615.507zM9.745 8.814v4.572l3.967-2.286-3.967-2.286z"/>
-      </svg>
-    </a>
-  </div>
-</section>
+    <!-- Redes Sociales -->
+    <section data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-amber-800 mb-2">Síguenos en Redes Sociales</h2>
+      <div class="flex space-x-6">
+        <a href="https://www.facebook.com/ees19/" target="_blank" aria-label="Facebook" class="text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-amber-600 rounded">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.594 1.324-1.326V1.326C24 .593 23.406 0 22.675 0z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/ees19_berazategui/" target="_blank" aria-label="Instagram" class="text-pink-600 hover:text-pink-800 focus:outline-none focus:ring-2 focus:ring-amber-600 rounded">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@ees19berazategui" target="_blank" aria-label="YouTube" class="text-red-600 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-amber-600 rounded">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19.615 3.184a3.01 3.01 0 012.12 2.12c.507 1.877.507 5.796.507 5.796s0 3.92-.507 5.797a3.01 3.01 0 01-2.12 2.12c-1.877.507-7.615.507-7.615.507s-5.737 0-7.614-.507a3.01 3.01 0 01-2.12-2.12C1.384 15.02 1.384 11.1 1.384 11.1s0-3.92.507-5.797a3.01 3.01 0 012.12-2.12C5.888 2.677 11.626 2.677 11.626 2.677s5.738 0 7.615.507zM9.745 8.814v4.572l3.967-2.286-3.967-2.286z"/>
+          </svg>
+        </a>
+      </div>
+    </section>
   </main>
 
-   <!-- Footer fijo abajo -->
+  <!-- Footer -->
   <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
     <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
   </footer>
