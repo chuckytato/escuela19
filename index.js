@@ -1,9 +1,11 @@
-function toggleMenu() {
-  const menuDrawer = document.getElementById("menuDrawer");
-  const overlay = document.getElementById("overlay");
-  menuDrawer.classList.toggle("translate-x-full");
-  overlay.classList.toggle("hidden");
-}
+ function toggleMenu() {
+      const menu = document.getElementById('menuDrawer');
+      const overlay = document.getElementById('overlay');
+      const isOpen = !menu.classList.contains('translate-x-full');
+      menu.classList.toggle('translate-x-full');
+      overlay.classList.toggle('hidden');
+      document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+    }
 
 // Carrusel automático
 const items = document.querySelectorAll('.carousel-item');
