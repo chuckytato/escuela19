@@ -16,84 +16,67 @@ function toggleMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   const novedades = [
     {
-      fecha: "",
       titulo: "Inicio de clases 2025",
       imagen: "../imagenes/inicio_de_clases.jpg",
-      descripcion: "La escuela inicia el ciclo lectivo el 1 de marzo con todas las medidas sanitarias correspondientes."
+      descripcion: "La escuela inicio el ciclo lectivo el 1 de marzo con todas las medidas sanitarias correspondientes."
     },
     {
-      fecha: "",
       titulo: "Clases de natación",
       imagen: "../imagenes/nata.jpg",
-      descripcion: "Las clases de natación con los chicos."
+      descripcion: "Nuestros estudiantes disfrutan de sus clases de natación en la pileta."
     },
     {
-      fecha: "",
-      titulo: "Caminata",
+      titulo: "Caminata por berazategui",
       imagen: "../imagenes/caminata.jpg",
-      descripcion: "Caminata recreativa por Berazategui con los alumnos."
+      descripcion: "Realizamos una caminata recreativa por Berazategui con los estudiantes."
     },
     {
-      fecha: "",
       titulo: "Competencia deportiva",
       imagen: "../imagenes/deporte.jpg",
-      descripcion: "Participación de la escuela en torneo intercolegial de atletismo."
+      descripcion: "Participación de la institucion del torneo intercolegial de educacion fisica."
     },
     {
-      fecha: "",
-      titulo: "Excursión a museo",
+      titulo: "Excursión al museo",
       imagen: "../imagenes/museo.jpg",
-      descripcion: "Salida educativa al museo de ciencias naturales para 3° año."
+      descripcion: "Salida educativa al museo de ciencias naturales para los estudiantes de 3° año."
     },
     {
-      fecha: "",
       titulo: "Feria de ciencias",
       imagen: "../imagenes/feria.jpg",
       descripcion: "Presentación de proyectos científicos elaborados por los estudiantes."
     },
     {
-      fecha: "",
-      titulo: "Se organizo la Competencia de ajedrez en la escuela",
+      titulo: "Competencia de ajedrez",
       imagen: "../imagenes/aje.jpg",
-      descripcion: "Competencia interescolar que pone a prueba la mente."
+      descripcion: "Se organizo un torneo de ajedrez en el Politecnico de Berazategui donde nuestros estudiantes participaron."
     },
     {
-      fecha: "",
-      titulo: "Se realizo el Acto del Dia de la Independencia",
+      titulo: "Acto del Dia de la Independencia",
       imagen: "../imagenes/acto.jpg",
-      descripcion: "Acto del 9 de julio."
+      descripcion: "Se organizo el Acto del 9 de julio en nuestra institucion."
     },
     {
-      fecha: "",
       titulo: "Clases de Educacion Fisica",
       imagen: "../imagenes/edu.jpg",
-      descripcion: "Practica de jabalina en educacion fisica."
+      descripcion: "Los estudiantes practican su tiro con la jabalina en educacion fisica."
     },
   ];
-
-  // Función para formatear fecha en formato DD/MM/YYYY
-  function formatearFecha(fechaISO) {
-    const fecha = new Date(fechaISO);
-    return fecha.toLocaleDateString("es-AR", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
-  }
 
   const newsList = document.getElementById("newsList");
 
   novedades.forEach((novedad) => {
     const card = document.createElement("article");
-    card.className = "bg-white rounded-lg shadow-md overflow-hidden max-w-xl mx-auto";
+    // w-full para que ocupe toda la celda del grid
+    // altura fija para que todas sean iguales, podés ajustar la altura si querés más o menos
+    card.className = "bg-white rounded-lg shadow-md overflow-hidden w-full h-[340px] flex flex-col";
 
-    card.innerHTML = `
-      <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 sm:h-60 object-cover object-center" />
-      <div class="p-4 flex-grow flex flex-col justify-between">
-        <h3 class="text-xl font-bold text-amber-900 mb-2">${novedad.titulo}</h3>
-        <p class="text-gray-700">${novedad.descripcion}</p>
-      </div>
-    `;
+card.innerHTML = `
+  <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 object-cover object-center" />
+  <div class="p-4 flex-grow flex flex-col justify-between">
+    <h3 class="text-xl font-bold text-amber-900 mb-1 line-clamp-2">${novedad.titulo}</h3> 
+    <p class="text-gray-700 line-clamp-4">${novedad.descripcion}</p>
+  </div>
+`;
 
     newsList.appendChild(card);
   });
