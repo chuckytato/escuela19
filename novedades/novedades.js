@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
       descripcion: "Realizamos una caminata recreativa por Berazategui con los estudiantes."
     },
     {
-      titulo: "Competencia deportiva",
+      titulo: "Día del Deporte",
       imagen: "../imagenes/deporte.jpg",
-      descripcion: "Participación de la institucion del torneo intercolegial de educacion fisica."
+      descripcion: "Una jornada llena de juegos, competencias y trabajo en equipo."
     },
     {
       titulo: "Excursión al museo",
@@ -60,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
       imagen: "../imagenes/edu.jpg",
       descripcion: "Los estudiantes practican su tiro con la jabalina en educacion fisica."
     },
+     {
+      titulo: "Muestra de Arte",
+      imagen: "../imagenes/arte.jpg",
+      descripcion: "Exposición de pinturas, esculturas y dibujos hechos por los alumnos."
+    },
   ];
 
   const newsList = document.getElementById("newsList");
@@ -72,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 card.innerHTML = `
   <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 object-cover object-center" />
-  <div class="p-4 flex-grow flex flex-col justify-between">
+  <div class="p-4">
     <h3 class="text-xl font-bold text-amber-900 mb-1 line-clamp-2">${novedad.titulo}</h3> 
     <p class="text-gray-700 line-clamp-4">${novedad.descripcion}</p>
   </div>
