@@ -68,17 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       titulo: "Clases de beisbol",
       imagen: "../imagenes/beisbol.jpg",
-      descripcion: "Nuestra clase está diseñada para niños y adolescentes que quieran iniciarse en este apasionante deporte ."
+      descripcion: "Aprendé los fundamentos del béisbol en clases dinámicas y divertidas."
     },
     {
       titulo: "Clases de tenis",
       imagen: "../imagenes/tenis.jpg",
-      descripcion: "Nuestras clases están pensadas para todas las edades y niveles, desde quienes recién comienzan hasta jugadores que buscan perfeccionar su técnica."
+      descripcion: "Clases adaptadas a cada nivel para mejorar tu técnica, coordinación y estrategia."
     },
     {
       titulo: "Clases de escalada deportiva",
       imagen: "../imagenes/escalar.jpg",
-      descripcion: "¡Desafiá la gravedad y superá tus propios límites! Nuestras clases de escalada deportiva están diseñadas para todos los niveles, desde principiantes que nunca han escalado hasta escaladores con experiencia que buscan mejorar su técnica."
+      descripcion: "Desarrollá fuerza, técnica y confianza mientras escalás rutas desafiantes."
     },
   ];
 
