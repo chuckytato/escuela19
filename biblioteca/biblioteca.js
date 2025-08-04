@@ -22,33 +22,46 @@ window.addEventListener('load', () => {
   overlay.classList.add('hidden');
   document.body.classList.remove('overflow-hidden');
 
-  // Lista de libros
-  const libros = [
-    { ruta: 'libros/libro1.pdf', nombre: 'Libro 1 - Matemáticas' },
-    { ruta: 'libros/libro2.pdf', nombre: 'Libro 2 - Historia' },
-    { ruta: 'libros/libro3.pdf', nombre: 'Libro 3 - Ciencias' }
-  ];
+// Lista de libros
+const libros = [
+  { ruta: 'libros/libro1.pdf', nombre: 'Libro 1 - Mate', imagen: 'img/matematicas1_libro.jpeg' },
+  { ruta: 'libros/libro2.pdf', nombre: 'Libro 2 - Historia', imagen: 'img/historia1_libro.jpg' },
+  { ruta: 'libros/libro3.pdf', nombre: 'Libro 3 - Ciencias', imagen: 'img/ciencias1_libro.jpeg' }
+];
 
-  const bookList = document.getElementById('bookList');
+const bookList = document.getElementById('bookList');
 
-  // Función para mostrar el PDF mediante link a Google Drive
-  function mostrarPDF(ruta, nombre) {
-    const link = document.getElementById('linkPdf');
-    const contenedor = document.getElementById('visorPdfContainer');
-    const titulo = document.getElementById('nombreLibro');
+// Función para mostrar el PDF
+function mostrarPDF(ruta, nombre) {
+  const link = document.getElementById('linkPdf');
+  const contenedor = document.getElementById('visorPdfContainer');
+  const titulo = document.getElementById('nombreLibro');
 
-    link.href = ruta;
-    link.textContent = 'Abrir "' + nombre + '" en Google Drive';
-    titulo.textContent = nombre;
-    contenedor.classList.remove('hidden');
-  }
+  link.href = ruta;
+  link.textContent = 'Abrir "' + nombre + '" en Google Drive';
+  titulo.textContent = nombre;
+  contenedor.classList.remove('hidden');
+}
 
-  // Crear botones para cada libro
-  libros.forEach(libro => {
-    const btn = document.createElement('button');
-    btn.textContent = libro.nombre;
-    btn.className = 'text-left bg-amber-100 hover:bg-amber-200 rounded px-4 py-2 font-medium text-amber-900 shadow-sm transition-colors duration-200';
-    btn.onclick = () => mostrarPDF(libro.ruta, libro.nombre);
-    bookList.appendChild(btn);
-  });
+// Crear botones para cada libro    
+libros.forEach(libro => {
+  const btn = document.createElement('button');
+  btn.className = 'rounded px-4 py-2 font-medium text-amber-900 shadow-sm transition-colors duration-200';
+  
+  // Establecer la imagen como fondo
+  btn.style.backgroundImage = `url(${libro.imagen})`;
+  btn.style.backgroundSize = 'cover'; // Cubrir el botón con la imagen
+  btn.style.backgroundPosition = 'center'; // Centrar la imagen
+
+  // Aumentar el tamaño del botón
+  btn.style.width = '200px'; // Establecer el ancho del botón
+  btn.style.height = '200px'; // Establecer la altura del botón
+  btn.style.border = 'none'; // Opcional: quitar el borde
+
+  // Opcional: Color de fondo semi-transparente para el texto
+  btn.style.backgroundColor = 'rgba(255, 255, 255, 0.6)'; // Fondo blanco semi-transparente
+
+  btn.onclick = () => mostrarPDF(libro.ruta, libro.nombre); // Llamar a la función al hacer clic
+  bookList.appendChild(btn);
+});
 });
