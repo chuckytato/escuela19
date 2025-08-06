@@ -31,13 +31,17 @@ function toggleMenu() {
       novedades.forEach((novedad) => {
         const card = document.createElement("article");
         card.className = "bg-white rounded-lg shadow-md overflow-hidden w-full h-[340px] flex flex-col";
-        card.innerHTML = `
-          <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 object-cover object-center" />
-          <div class="p-4">
-            <h3 class="text-xl font-bold text-amber-900 mb-1 line-clamp-2">${novedad.titulo}</h3>
-            <p class="text-gray-700 line-clamp-4">${novedad.descripcion}</p>
-          </div>
-        `;
+       card.innerHTML = `
+  ${
+    novedad.video
+      ? `<video src="${novedad.video}" class="w-full h-48 object-cover object-center" autoplay muted loop playsinline></video>`
+      : `<img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 object-cover object-center" />`
+  }
+  <div class="p-4">
+    <h3 class="text-xl font-bold text-amber-900 mb-1 line-clamp-2">${novedad.titulo}</h3>
+    <p class="text-gray-700 line-clamp-4">${novedad.descripcion}</p>
+  </div>
+`;
         newsList.appendChild(card);
       });
     });
