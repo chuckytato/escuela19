@@ -25,6 +25,8 @@ function toggleMenu() {
         { titulo: "Acrosport", imagen: "../imagenes/gimnasia1.jpg", descripcion: "Practicas gimnasticas expresivas I y II." },
         { titulo: "Torneo interno de futbol", imagen: "../imagenes/torneofulbo.jpg", descripcion: "Los estudiantes de 6° año organizaron un torneo de futbol para los estudiantes" },
         { titulo: "Caminata al Parque Pereyra", imagen: "../imagenes/parquepereyra.jpg", descripcion: "Organizamos una caminata al Parque pereyra." },
+        { titulo: "Video 1", video: "../imagenes/video.mp4", descripcion: "Los estudiantes de 6° año organizaron un torneo de futbol para los estudiantes" },
+
       ];
 
       const newsList = document.getElementById("newsList");
