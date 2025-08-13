@@ -25,48 +25,12 @@ function toggleMenu() {
         { titulo: "Acrosport", imagen: "../imagenes/gimnasia1.jpg", descripcion: "Practicas gimnasticas expresivas I y II." },
         { titulo: "Torneo interno de futbol", imagen: "../imagenes/torneofulbo.jpg", descripcion: "Los estudiantes de 6° año organizaron un torneo de futbol para los estudiantes" },
         { titulo: "Caminata al Parque Pereyra", imagen: "../imagenes/parquepereyra.jpg", descripcion: "Organizamos una caminata al Parque pereyra." },
-        { titulo: "Video 1", video: "../imagenes/video.mp4", descripcion: "" },
-        { titulo: "Video 2", video: "../imagenes/video2.mp4", descripcion: "" },
-        { titulo: "Video 3", video: "../imagenes/video3.mp4", descripcion: "" },
-        { titulo: "Video 4", video: "../imagenes/video4.mp4", descripcion: "" },
-
       ];
 
       const newsList = document.getElementById("newsList");
-    const videoModal = document.getElementById("videoModal");
-    const modalVideo = document.getElementById("modalVideo");
-    const closeModal = document.getElementById("closeModal");
-
-    novedades.forEach((novedad) => {
-      const card = document.createElement("article");
-      card.className = "bg-white rounded-lg shadow-md overflow-hidden w-full h-[340px] flex flex-col";
-
-      if (novedad.video) {
-  const videoId = `video-${Math.random().toString(36).substr(2, 9)}`;
-  card.innerHTML = `
-    <div class="relative cursor-pointer">
-      <video id="${videoId}" src="${novedad.video}" class="w-full h-48 object-cover object-center" muted playsinline preload="metadata"></video>
-      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 opacity-100">
-        <div class="text-white text-5xl bg-black bg-opacity-60 rounded-full p-3 pointer-events-none"><i class="fas fa-play"></i></div>
-      </div>
-    </div>
-    <div class="p-4">
-      <h3 class="text-xl font-bold text-amber-900 mb-1 line-clamp-2">${novedad.titulo}</h3>
-      <p class="text-gray-700 line-clamp-4">${novedad.descripcion}</p>
-    </div>
-  `;
-  newsList.appendChild(card);
-
-  const previewVideo = card.querySelector(`#${videoId}`);
-  const videoContainer = card.querySelector('.relative');
-
-  videoContainer.addEventListener("click", () => {
-    modalVideo.src = novedad.video;
-    videoModal.classList.remove("hidden");
-    modalVideo.play();
-  });
-}
-else {
+      novedades.forEach((novedad) => {
+        const card = document.createElement("article");
+        card.className = "bg-white rounded-lg shadow-md overflow-hidden w-full h-[340px] flex flex-col";
         card.innerHTML = `
           <img src="${novedad.imagen}" alt="${novedad.titulo}" class="w-full h-48 object-cover object-center" />
           <div class="p-4">
@@ -75,21 +39,5 @@ else {
           </div>
         `;
         newsList.appendChild(card);
-      }
+      });
     });
-
-    closeModal.addEventListener("click", () => {
-      modalVideo.pause();
-      modalVideo.src = "";
-      videoModal.classList.add("hidden");
-    });
-
-    // También cerrar al hacer clic afuera del video
-    videoModal.addEventListener("click", (e) => {
-      if (e.target === videoModal) {
-        modalVideo.pause();
-        modalVideo.src = "";
-        videoModal.classList.add("hidden");
-      }
-    });
-  });
