@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca - EES N°19</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+ <style>
+  .btn-ciclo, .btn-materia {
+    @apply bg-amber-900 text-white px-4 py-2 rounded shadow hover:bg-amber-700 transition;
+  }
+  .btn-ciclo.active, .btn-materia.active {s
+    @apply bg-amber-600;
+  }
+</style>
+
+
+</head>
+
+<body class="bg-amber-50 min-h-screen flex flex-col">
+
+ <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-[#800000] text-white shadow z-50">
+   <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
+  <div class="flex items-center space-x-3">
+    <a href="../index.html" class="flex items-center space-x-3">
+      <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md" />
+      <div>
+        <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
+        <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
+      </div>
+    </a>
+  </div>
+      <nav class="hidden md:flex space-x-4 text-sm lg:text-base">
+        <a href="../index.html" class="hover:text-amber-300">Inicio</a>
+        <a href="../cicloBasico/cicloBasico.html" class="hover:text-amber-300">Ciclo Básico</a>
+        <a href="../cicloSuperior/cicloSuperior.html" class="hover:text-amber-300">Ciclo Superior</a>
+        <a href="../biblioteca/biblioteca.html" class="border-b-2 border-amber-300 hover:text-amber-300">Biblioteca</a>
+        <a href="../contacto/contacto.html" class="hover:text-amber-300">Contacto</a>
+        <a href="../cooperadora/cooperadora.html" class="hover:text-amber-300">Cooperadora</a>
+      </nav>
+      <div class="space-y-1 cursor-pointer md:hidden" onclick="toggleMenu()">
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+        <div class="w-6 h-0.5 bg-white"></div>
+      </div>
+    </div>
+  </header> 
+
+  <!-- Menú móvil -->
+  <aside id="menuDrawer"
+    class="fixed top-0 right-0 h-full w-4/5 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6 space-y-4 overflow-auto max-w-xs md:hidden">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-amber-800">Menú</h2>
+      <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
+    </div>
+    <a href="../index.html"
+      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">
+      Inicio
+    </a>
+    <a href="../cicloBasico/cicloBasico.html"
+      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo
+      Básico</a>
+    <a href="../cicloSuperior/cicloSuperior.html"
+      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo
+      Superior</a>
+    <a href="../biblioteca/biblioteca.html"
+      class="flex items-center gap-2 w-full py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition font-semibold rounded shadow-md"> <span>➤</span>Biblioteca</a>
+    <a href="../contacto/contacto.html"
+      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Contacto</a>
+    <a href="../cooperadora/cooperadora.html"
+      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Cooperadora</a>
+  </aside>
+
+  <!-- Overlay -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40" onclick="toggleMenu()"></div>
+
+  <!-- Main -->
+  <main class="flex-grow max-w-6xl mx-auto px-4 py-8 space-y-8 w-full pt-20">
+
+  <section>
+  <h2 class="text-3xl font-bold text-amber-900 mb-6 text-center">Biblioteca</h2>
+
+  <!-- Botones de ciclos -->
+ <div id="ciclos" class="flex justify-center flex-wrap gap-4 mb-6">
+  <button class="btn-ciclo" data-ciclo="basico">Ciclo Básico</button>
+  <button class="btn-ciclo" data-ciclo="superior">Ciclo Superior</button>
+  <button id="btn-documentacion" class="btn-ciclo">Documentación</button>
+</div>
+
+
+  <!-- Contenedor de materias -->
+  <div id="materias" class="flex flex-wrap justify-center gap-4 mb-8 hidden"></div>
+
+  <!-- Contenedor de libros -->
+  <div id="libros" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center"></div>
+</section>
+
+
+
+    <section id="visorPdfContainer" class=" flex flex-col items-center max-w-5xl mx-auto">
+      <a id="linkPdf" href="" target="_blank" >
+      </a>
+      <p id="nombreLibro" class="text-amber-900 font-semibold text-lg"></p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
+    <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
+  </footer>
+
+  <script src="biblioteca.js"></script>
+</body>
+</html>
