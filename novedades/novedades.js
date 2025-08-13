@@ -6,6 +6,13 @@ function toggleMenu() {
       overlay.classList.toggle('hidden');
       document.body.style.overflow = isOpen ? 'auto' : 'hidden';
     }
+      const menu = document.getElementById('menuDrawer');
+      const overlay = document.getElementById('overlay');
+      const isOpen = !menu.classList.contains('translate-x-full');
+      menu.classList.toggle('translate-x-full');
+      overlay.classList.toggle('hidden');
+      document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+  
 
     document.addEventListener('DOMContentLoaded', () => {
       const novedades = [
