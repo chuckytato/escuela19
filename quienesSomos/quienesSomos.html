@@ -81,16 +81,6 @@
       </p>
     </section>
 
-    <!-- Galería -->
-    <section data-aos="fade-up">
-      <h2 class="text-3xl font-bold text-amber-800 mb-4">Galería</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <img src="../imagenes/inicio_de_clases.jpg" alt="Inicio de clases" class="rounded shadow-md" />
-        <img src="../imagenes/novedades.jpg" alt="Novedades" class="rounded shadow-md" />
-        <img src="../imagenes/caminata.jpg" alt="Caminata" class="rounded shadow-md" />
-      </div>
-    </section>
-
     <!-- Ubicación -->
     <section data-aos="fade-up">
       <h2 class="text-3xl font-bold text-amber-800 mb-4">Encuéntranos</h2>
@@ -114,27 +104,22 @@
     <section data-aos="fade-up">
       <h2 class="text-3xl font-bold text-amber-800 mb-2">Síguenos en Redes Sociales</h2>
       <div class="flex space-x-6">
-        <a href="https://www.facebook.com/ees19/" target="_blank" aria-label="Facebook" class="text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-amber-600 rounded">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.594 1.324-1.326V1.326C24 .593 23.406 0 22.675 0z"/>
-          </svg>
-        </a>
         <a href="https://www.instagram.com/ees19_berazategui/" target="_blank" aria-label="Instagram" class="text-pink-600 hover:text-pink-800 focus:outline-none focus:ring-2 focus:ring-amber-600 rounded">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm4.75-.25a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/>
-          </svg>
-        </a>
-        <a href="https://www.youtube.com/@ees19berazategui" target="_blank" aria-label="YouTube" class="text-red-600 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-amber-600 rounded">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19.615 3.184a3.01 3.01 0 012.12 2.12c.507 1.877.507 5.796.507 5.796s0 3.92-.507 5.797a3.01 3.01 0 01-2.12 2.12c-1.877.507-7.615.507-7.615.507s-5.737 0-7.614-.507a3.01 3.01 0 01-2.12-2.12C1.384 15.02 1.384 11.1 1.384 11.1s0-3.92.507-5.797a3.01 3.01 0 012.12-2.12C5.888 2.677 11.626 2.677 11.626 2.677s5.738 0 7.615.507zM9.745 8.814v4.572l3.967-2.286-3.967-2.286z"/>
           </svg>
         </a>
       </div>
     </section>
   </main>
 
+  <!-- Botón volver arriba -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="fixed bottom-4 right-4 bg-[#800000] text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition duration-300 z-40">
+    ↑
+  </button>
   <!-- Footer -->
-  <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
+  <footer class="bg-[#800000] text-white p-6 mt-12 text-center z-40">
     <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
   </footer>
   <!-- Scripts -->

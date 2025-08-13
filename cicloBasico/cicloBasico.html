@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Escuela EES19 - Ciclo Básico</title>  
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      opacity: 0;
+      animation: fadeInBody 0.6s ease-in-out forwards;
+    }
+    @keyframes fadeInBody {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head> 
 
 <body class="bg-amber-50 min-h-screen flex flex-col">
@@ -13,7 +27,7 @@
    <div class="flex items-center justify-between max-w-6xl mx-auto px-4 h-16">
   <div class="flex items-center space-x-3">
     <a href="../index.html" class="flex items-center space-x-3">
-      <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md" />
+      <img src="../imagenes/ESCUDO.jpg" alt="Logo Escuela" class="h-12 w-auto object-contain rounded shadow-md transition-transform duration-300 hover:scale-105" />
       <div>
         <h1 class="hidden sm:block text-base sm:text-lg font-bold">Escuela de Educación Secundaria N° 19</h1>
         <h1 class="block sm:hidden text-base font-bold">Escuela Secundaria N° 19</h1>
@@ -21,12 +35,12 @@
     </a>
   </div>
       <nav class="hidden md:flex space-x-4 text-sm lg:text-base">
-        <a href="../index.html" class="hover:text-amber-300">Inicio</a>
-        <a href="../cicloBasico/cicloBasico.html" class="border-b-2 border-amber-300 hover:text-amber-300">Ciclo Básico</a>
-        <a href="../cicloSuperior/cicloSuperior.html" class="hover:text-amber-300">Ciclo Superior</a>
-        <a href="../biblioteca/biblioteca.html" class="hover:text-amber-300">Biblioteca</a>
-        <a href="../contacto/contacto.html" class="hover:text-amber-300">Contacto</a>
-        <a href="../cooperadora/cooperadora.html" class="hover:text-amber-300">Cooperadora</a>
+        <a href="../index.html" class="hover:text-amber-300 transition-colors duration-300">Inicio</a>
+        <a href="../cicloBasico/cicloBasico.html" class="border-b-2 border-amber-300 hover:text-amber-300 transition-colors duration-300">Ciclo Básico</a>
+        <a href="../cicloSuperior/cicloSuperior.html" class="hover:text-amber-300 transition-colors duration-300">Ciclo Superior</a>
+        <a href="../biblioteca/biblioteca.html" class="hover:text-amber-300 transition-colors duration-300">Biblioteca</a>
+        <a href="../contacto/contacto.html" class="hover:text-amber-300 transition-colors duration-300">Contacto</a>
+        <a href="../cooperadora/cooperadora.html" class="hover:text-amber-300 transition-colors duration-300">Cooperadora</a>
       </nav>
       <div class="space-y-1 cursor-pointer md:hidden" onclick="toggleMenu()">
         <div class="w-6 h-0.5 bg-white"></div>
@@ -43,42 +57,39 @@
       <h2 class="text-xl font-bold text-amber-800">Menú</h2>
       <button onclick="toggleMenu()" class="text-amber-800 font-bold text-lg">✕</button>
     </div>
-    <a href="../index.html" class="flex items-center gap-2 w-full py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition font-semibold rounded shadow-md">Inicio</a>
-    <a href="../cicloBasico/cicloBasico.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded"> <span>➤</span>Ciclo
-      Básico</a>
-    <a href="../cicloSuperior/cicloSuperior.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Ciclo
-      Superior</a>
-    <a href="../biblioteca/biblioteca.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 rounded">Biblioteca</a>
-    <a href="../contacto/contacto.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Contacto</a>
-    <a href="../cooperadora/cooperadora.html"
-      class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition rounded">Cooperadora</a>
+    <a href="../index.html" class="flex items-center gap-2 w-full py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 font-semibold rounded shadow-md">Inicio</a>
+    <a href="../cicloBasico/cicloBasico.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded"><span>➤</span> Ciclo Básico</a>
+    <a href="../cicloSuperior/cicloSuperior.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Ciclo Superior</a>
+    <a href="../biblioteca/biblioteca.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Biblioteca</a>
+    <a href="../contacto/contacto.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Contacto</a>
+    <a href="../cooperadora/cooperadora.html" class="block py-2 px-4 bg-[#800000] text-white hover:bg-gray-600 transition-all duration-300 rounded">Cooperadora</a>
   </aside>
   <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden" onclick="toggleMenu()"></div>
 
   <!-- Contenido principal -->
   <main class="pt-20 max-w-6xl mx-auto p-6 flex-grow" role="main">
-    <h2 class="text-2xl font-bold text-amber-900 mb-2">Ciclo Básico</h2>
-    <p class="text-gray-700">
+    <h2 class="text-2xl font-bold text-amber-900 mb-4" data-aos="fade-up">Ciclo Básico</h2>
+    <p class="text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="100">
       Aquí encontrarás información relevante sobre el Ciclo Básico de la Escuela Secundaria 19.
     </p>
-    <br>
+
     <!-- Sección Materias -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Materias</h3>
-      <ul class="list-disc list-inside text-gray-700">
-        <li>Matemática</li>
-        <li>Lengua y Literatura</li>
-        <li>Ciencias Naturales</li>
-        <li>Ciencias Sociales</li>
-        <li>Inglés</li>
-        <li>Educación Física</li>
-        <li>Arte</li>
+    <section class="mb-8 bg-white shadow-md rounded-lg p-6" data-aos="fade-up">
+      <h3 class="text-2xl font-bold text-amber-900 mb-4 hover:scale-105 transition-transform">Materias</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>📘 Matemática</li>
+        <li>📖 Lengua y Literatura</li>
+        <li>🧪 Ciencias Naturales</li>
+        <li>🌍 Ciencias Sociales</li>
+        <li>🗣 Inglés</li>
+        <li>🏃 Educación Física</li>
+        <li>🎨 Arte</li>
       </ul>
     </section>
 
     <!-- Sección Horas y Turnos -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Horas y Turnos</h3>
+    <section class="mb-8 bg-white shadow-md rounded-lg p-6" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2 hover:scale-105 transition-transform">Horas y Turnos</h3>
       <p class="text-gray-700 mb-2">
         El Ciclo Básico cuenta con dos turnos: mañana y tarde.
       </p>
@@ -88,28 +99,28 @@
     </section>
 
     <!-- Sección Horas Adicionales -->
-    <section class="mb-8">
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Horas Adicionales</h3>
+    <section class="mb-8 bg-white shadow-md rounded-lg p-6" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2 hover:scale-105 transition-transform">Horas Adicionales</h3>
       <p class="text-gray-700 mb-2">
         Además de las materias regulares, se realizan actividades complementarias en horas adicionales:
       </p>
-      <ul class="list-disc list-inside text-gray-700">
-        <li>Talleres de apoyo académico</li>
-        <li>Clases de música y arte</li>
-        <li>Deportes y recreación</li>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>🛠 Talleres de apoyo académico</li>
+        <li>🎶 Clases de música y arte</li>
+        <li>🏀 Deportes y recreación</li>
       </ul>
     </section>
 
     <!-- Sección Buffet -->
-    <section>
-      <h3 class="text-2xl font-bold text-amber-900 mb-2">Buffet Escolar</h3>
+    <section class="bg-white shadow-md rounded-lg p-6" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-2xl font-bold text-amber-900 mb-2 hover:scale-105 transition-transform">Buffet Escolar</h3>
       <p class="text-gray-700 mb-2">
         En el buffet de la escuela se ofrece desayuno, almuerzo y merienda.  
       </p>
       <p class="text-gray-700 mb-4">
         Es importante que los estudiantes elijan con anticipación qué alimentos desean para cada momento del día, para asegurar la disponibilidad y evitar desperdicios.
       </p>
-      <ul class="list-disc list-inside text-gray-700">
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
         <li><strong>Desayuno:</strong> leche, medialunas, yogur, frutas</li>
         <li><strong>Almuerzo:</strong> platos calientes, ensaladas, jugos naturales</li>
         <li><strong>Merienda:</strong> sandwiches, infusiones, frutas</li>
@@ -117,12 +128,20 @@
     </section>
   </main>
 
-  <!-- Footer fijo abajo -->
-  <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
+  <!-- Botón volver arriba -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="fixed bottom-4 right-4 bg-[#800000] text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition duration-300 z-40">
+    ↑
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-[#800000] text-white p-6 mt-12 text-center z-40">
     <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
   </footer>
 
-  <!-- Script -->
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
   <script src="cicloBasico.js"></script>  
 
 </body>
