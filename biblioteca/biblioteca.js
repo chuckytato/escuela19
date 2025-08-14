@@ -22,24 +22,48 @@ window.addEventListener('load', () => {
   overlay.classList.add('hidden');
   document.body.classList.remove('overflow-hidden');
 
-  // Lista de libros
+  // Lista de libros con imagen y ruta de Drive
   const libros = [
-    { ruta: 'libros/libro1.pdf', nombre: 'Libro 1 - Matemáticas' },
-    { ruta: 'libros/libro2.pdf', nombre: 'Libro 2 - Historia' },
-    { ruta: 'libros/libro3.pdf', nombre: 'Libro 3 - Ciencias' }
+    {
+      ruta: 'libros/libro1.pdf',
+      nombre: 'Libro 1 - Matemáticas',
+      imagen: '../img/matematicas1_libro.jpeg',
+      drive: '#'
+    },
+    {
+      ruta: 'libros/libro2.pdf',
+      nombre: 'Libro 2 - Historia',
+      imagen: '../img/historia1_libro.jpg',
+      drive: 'https://drive.google.com/file/d/1XHPR61cz2b01h0zLN8UPzfGFQOS1gyVx/view'
+    },
+    {
+      ruta: 'libros/libro3.pdf',
+      nombre: 'Libro 3 - Ciencias',
+      imagen: '../img/ciencias1_libro.jpeg',
+      drive: 'https://drive.google.com/file/d/1wZ-F0N-_iGpjrrz3vhFVEQQGPGndvLOd/view'
+    }
   ];
 
   const bookList = document.getElementById('bookList');
 
-  // Función para mostrar el PDF mediante link a Google Drive
-  function mostrarPDF(ruta, nombre) {
+  // Mostrar PDF y portada
+  function mostrarPDF(ruta, nombre, imagen, drive) {
     const link = document.getElementById('linkPdf');
     const contenedor = document.getElementById('visorPdfContainer');
     const titulo = document.getElementById('nombreLibro');
+    const img = document.getElementById('imgLibro');
 
-    link.href = ruta;
+    link.href = drive;
     link.textContent = 'Abrir "' + nombre + '" en Google Drive';
     titulo.textContent = nombre;
+
+    if (imagen) {
+      img.src = imagen;
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
+    }
+
     contenedor.classList.remove('hidden');
   }
 
@@ -48,7 +72,7 @@ window.addEventListener('load', () => {
     const btn = document.createElement('button');
     btn.textContent = libro.nombre;
     btn.className = 'text-left bg-amber-100 hover:bg-amber-200 rounded px-4 py-2 font-medium text-amber-900 shadow-sm transition-colors duration-200';
-    btn.onclick = () => mostrarPDF(libro.ruta, libro.nombre);
+    btn.onclick = () => mostrarPDF(libro.ruta, libro.nombre, libro.imagen, libro.drive);
     bookList.appendChild(btn);
   });
 });
