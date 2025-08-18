@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
     },
     {
       ruta: 'libros/libro3.pdf',
-      nombre: 'Libro 3 - Ciencias',
+      nombre: 'Libro 3 - Naturales',
       imagen: '../img/ciencias1_libro.jpeg',
       drive: 'https://drive.google.com/file/d/1wZ-F0N-_iGpjrrz3vhFVEQQGPGndvLOd/view'
     }
