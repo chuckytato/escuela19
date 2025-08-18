@@ -67,29 +67,31 @@
 
   <!-- Main -->
   <main class="flex-grow max-w-6xl mx-auto px-4 py-8 space-y-8 w-full pt-20">
-    <section>
-      <h2 class="text-3xl font-bold text-amber-900 mb-6">Biblioteca</h2>
-      <div id="bookList" class="flex flex-col gap-3 max-w-xl mx-auto">
-        <!-- Botones cargados por JS -->
-      </div>
-    </section>
 
-    <section id="visorPdfContainer" class="hidden flex flex-col items-center max-w-5xl mx-auto">
-      <img id="imgLibro" src="" alt="Portada del libro" class="w-40 h-56 object-cover rounded shadow mb-4" style="display:none;">
-      <a id="linkPdf" href="" target="_blank" class="text-amber-800 underline font-semibold mb-4 hover:text-amber-600">
-        Abrir PDF en Google Drive
-      </a>
-      <p id="nombreLibro" class="text-amber-900 font-semibold text-lg"></p>
+    <section>
+      <h2 class="text-3xl font-bold text-amber-900 mb-6 text-center">Biblioteca</h2>
+    
+      <!-- Botones de ciclos -->
+      <div id="ciclos" class="flex justify-center flex-wrap gap-4 mb-6">
+        <button class="btn-ciclo" data-ciclo="basico">Ciclo Básico</button>
+        <button class="btn-ciclo" data-ciclo="superior">Ciclo Superior</button>
+        <button id="btn-documentacion" class="btn-ciclo">Documentación</button>
+      </div>
+    
+      <!-- Contenedor de años -->
+      <div id="anios" class="flex flex-wrap justify-center gap-4 mb-8 hidden"></div>
+    
+      <!-- Contenedor de materias -->
+      <div id="materias" class="flex flex-wrap justify-center gap-4 mb-8 hidden"></div>
+    
+      <!-- Contenedor de libros -->
+      <div id="libros" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center"></div>
     </section>
+    
   </main>
 
-  <!-- Botón volver arriba -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    class="fixed bottom-4 right-4 bg-[#800000] text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition duration-300 z-40">
-    ↑
-  </button>
   <!-- Footer -->
-  <footer class="bg-[#800000] text-white p-6 mt-12 text-center z-40">
+  <footer class="bg-[#800000] text-white p-6 mt-12 text-center">
     <p>&copy; 2025 Escuela de Educación Secundaria N° 19 "Paula Silvestro" - Berazategui</p>
   </footer>
 
